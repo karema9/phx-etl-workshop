@@ -1,0 +1,4 @@
+INFO:root:Extracting companies data from https://api.polygon.io/v3/reference/tickers.....
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.polygon.io:443
+DEBUG:urllib3.connectionpool:https://api.polygon.io:443 "GET /v3/reference/tickers?count=500&apiKey=one9fzytfjoE67utMkopidSJDQ9s5p37 HTTP/1.1" 200 None
+INFO:root:Extraction successfull
