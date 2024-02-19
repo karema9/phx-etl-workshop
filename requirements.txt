@@ -1,0 +1,12 @@
+pandas 
+sqlite3
+sqlalchemy
+duckdb
+duckdb-engine
+prefect
+requests
+httpx
+psycopg2
+yfinance
+pprint
+black
