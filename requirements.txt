@@ -1,5 +1,4 @@
 pandas 
-sqlite3
 sqlalchemy
 duckdb
 duckdb-engine
@@ -8,5 +7,4 @@ requests
 httpx
 psycopg2
 yfinance
-pprint
 black
