@@ -1,0 +1,10 @@
+2024-02-25 04:10:11,323 INFO Starting data pipeline...
+2024-02-25 04:10:11,926 INFO Here is a little bit of information about the data stored /home/c99/Desktop/data-projects/phx-etl-workshop/03-ETL-pipelines/lab-apps-review/data/apps_data.csv:
+2024-02-25 04:10:11,928 INFO 
+There are 10841 rows and 13 columns in this DataFrame.
+2024-02-25 04:10:13,568 INFO Here is a little bit of information about the data stored /home/c99/Desktop/data-projects/phx-etl-workshop/03-ETL-pipelines/lab-apps-review/data/review_data.csv:
+2024-02-25 04:10:13,569 INFO 
+There are 64295 rows and 5 columns in this DataFrame.
+2024-02-25 04:10:13,570 INFO Transforming data to curate a dataset with all FOOD_AND_DRINK apps and their corresponding reviews with a rating of at least 4.0 and  1000 reviews
+
+2024-02-25 04:10:16,015 INFO Pipeline successful
