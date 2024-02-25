@@ -4,7 +4,7 @@ import duckdb
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
+    format="%(asctime)s - %(levelname)s - %(message)s",
     filename="app-review-etl.log",
 )
 
@@ -23,6 +23,7 @@ def extract(file_path):
     """
 
     try:
+        logging.info("Extraction in progress.........")
         data = pd.read_csv(file_path)
 
         logging.info(
@@ -106,6 +107,8 @@ def transform(apps, reviews, category, min_rating, min_reviews):
         f"returned"
     )
 
+    logging.info("Transformation complete...................")
+
     # Return the transformed DataFrame
     return top_apps
 
@@ -123,16 +126,21 @@ def load(dataframe, database_name, table_name):
     Returns:
         pd.DataFrame
     """
+    try:
+        logging.info("Loading in progress...........")
 
     # Connect to the database
-    con = duckdb.connect(database_name)
+        con = duckdb.connect(database_name)
 
-    # Write the DataFrame to the database
-    dataframe.to_sql(table_name, con, if_exists="replace", index=False)
+        # Write the DataFrame to the database
+        dataframe.to_sql(table_name, con, if_exists="replace", index=False)
 
-    # Validate the data was loaded correctly
-    loaded_dataframe = con.execute(f"SELECT * FROM {table_name}").fetchdf()
-    assert dataframe.shape == loaded_dataframe.shape
+        # Validate the data was loaded correctly
+        loaded_dataframe = con.execute(f"SELECT * FROM {table_name}").fetchdf()
+        assert dataframe.shape == loaded_dataframe.shape
+    
+    except Exception as e:
+        logging.exception("Error {e} while loading data")
 
     # Return the loaded DataFrame
     return loaded_dataframe
