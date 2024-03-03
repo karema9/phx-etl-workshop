@@ -24,9 +24,16 @@ Clean the data - changing the data types, dropping unwanted columns , and transf
 
 Load the data into duckdb, ensure that the data is persistent.
 
+Your database is supposed to contain three tables. 
+
+- *dim_companies* - contaning the details about the 100 companies, this is from Polygon API
+
+- *dim_date* - table containing the different dimensions of date that are useful in querying the date
+
+- *fact_table* - containing the historical financial data of the 100 companies. In addition to the historical data, there should be foreign keys linking the two other tables for referential integrity.
 
 #### Deliverables
 
 You should be able to perform some queries on the data warehouse that you have built.
 
-BONUS : you can dockerize your data pipeline. Note, there are no additional points for dockerizing you pipelines.
+BONUS : you can dockerize your data pipeline. Note, there are no additional points for dockerizing you pipelines.I
